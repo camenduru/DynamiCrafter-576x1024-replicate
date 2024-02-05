@@ -1,5 +1,5 @@
 build:
-  gpu: false
+  gpu: true
   python_version: "3.10"
   run:
     - apt update -y && apt install -y software-properties-common python3-launchpadlib && apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && apt install -y aria2 git git-lfs wget libgl1 libglib2.0-0
