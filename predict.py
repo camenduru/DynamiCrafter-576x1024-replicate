@@ -88,7 +88,7 @@ class Predictor(BasePredictor):
         i2v_eta: float = Input(description="ETA", default=1.0, ge=0.0, le=1.0),
         i2v_cfg_scale: float = Input(description="CFG Scale", default=7.5, ge=1.0, le=15.0),
         i2v_steps: int = Input(description="Sampling steps", default=50, ge=1, le=60),
-        i2v_motion: int = Input(description="Motion magnitude", default=3, ge=1, le=4),
+        i2v_motion: int = Input(description="Motion magnitude", default=4, ge=1, le=20),
     ) -> Path:
         video_path = infer(i2v_input_image, i2v_input_text, steps=i2v_steps, cfg_scale=i2v_cfg_scale, eta=i2v_eta, fs=i2v_motion, seed=i2v_seed, model=self.model)
         return Path(video_path)
