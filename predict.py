@@ -44,7 +44,7 @@ def infer(image_path, prompt, steps=50, cfg_scale=7.5, eta=1.0, fs=3, seed=123, 
     batch_size=1
     channels = model.model.diffusion_model.out_channels
     frames = model.temporal_length
-    h, w = 256 // 8, 256 // 8
+    h, w = resolution[0] // 8, resolution[1] // 8
     noise_shape = [batch_size, channels, frames, h, w]
     # text cond
     text_emb = model.get_learned_conditioning([prompt])
